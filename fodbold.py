@@ -76,11 +76,6 @@ def menu():
 
 
 
-try:
-    open(filename, wb)
-    pickle.dump(betalinger.pk, betalinger2.pk)
-except:
-    print ("Unable to save data")
 
 infile = open(filename,'rb')
 dict = pickle.load(infile)
