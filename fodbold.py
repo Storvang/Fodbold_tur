@@ -2,8 +2,9 @@ import pickle, time
 filename = 'betalinger.pk'
 Savedfilename= 'betalinger2.pk'
 
+fodboldtur ={}
+
 dict = {
-    'Bob': 0,
     'Hans Hansen': 0,
     'Klaus Klausen': 0,
     'Ole Olsen': 0,
@@ -31,7 +32,11 @@ def payMoney():
         amount = int(amount_string)
     except ValueError:
         payMoney()
-
+    try:
+        dict[name] = int(dict[name])
+        dict[name] += amount
+    except:
+        payMoney()
 
 
     dict[name] += amount
